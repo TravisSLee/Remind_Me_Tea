@@ -1,0 +1,3 @@
+class BbtController < ApplicationController
+
+end
