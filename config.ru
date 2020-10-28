@@ -4,6 +4,11 @@ def app
   ApplicationController
 end
 
+use Rack::MethodOverride
+use UserController
+use BbtController
+use FriendController
+
 describe ApplicationController do
   it "responds with a welcome message" do
     get '/'
