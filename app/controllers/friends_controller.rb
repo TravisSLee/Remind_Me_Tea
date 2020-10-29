@@ -1,3 +1,3 @@
-class FriendController < ApplicationController
+class FriendsController < ApplicationController
 
 end

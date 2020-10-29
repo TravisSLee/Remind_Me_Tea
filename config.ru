@@ -1,13 +1,13 @@
 require_relative "spec_helper"
 
-def app
-  ApplicationController
-end
+
 
 use Rack::MethodOverride
-use UserController
-use BbtController
-use FriendController
+use UsersController
+use BbtsController
+use FriendsController
+
+run ApplicationController
 
 describe ApplicationController do
   it "responds with a welcome message" do

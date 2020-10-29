@@ -1,3 +1,3 @@
-class BbtController < ApplicationController
+class BbtsController < ApplicationController
 
 end

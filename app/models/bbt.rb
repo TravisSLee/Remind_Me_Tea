@@ -1,4 +1,4 @@
 class Bbt < ActiveRecord::Base
-  belongs_to :friends
-  belongs_to :user, through: :friends
+  belongs_to :friend
+  belongs_to :user
 end

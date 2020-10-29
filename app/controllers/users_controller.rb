@@ -1,4 +1,4 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
   get "/" do
     @user = current_user if logged_in?
    erb :index
@@ -21,12 +21,6 @@ class UserController < ApplicationController
       redirect '/tweets'
     end
    end
-
-
-  get "/users/:slug" do
-    @user = User.find_by_slug(params[:slug])
-    erb :'users/show'
-  end
 
   get '/login' do
     if !logged_in?
