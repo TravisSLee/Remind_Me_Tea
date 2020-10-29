@@ -7,7 +7,7 @@ use UsersController
 use BbtsController
 use FriendsController
 
-run ApplicationController
+
 
 describe ApplicationController do
   it "responds with a welcome message" do
@@ -16,3 +16,4 @@ describe ApplicationController do
     expect(last_response.body).to include("Welcome to the Sinatra Template!")
   end
 end
+run ApplicationController

@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   get "/" do
-    @user = current_user if logged_in?
-   erb :index
+    # @user = current_user if logged_in?
+   erb :welcome
   end
 
   get '/signup' do
