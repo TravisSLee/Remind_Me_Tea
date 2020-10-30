@@ -1,8 +1,5 @@
 class UsersController < ApplicationController
-  get "/" do
-    @user = current_user if logged_in?
-    erb :index
-  end
+
 
   get '/signup' do
     if !logged_in?
@@ -19,6 +16,7 @@ class UsersController < ApplicationController
      @user = User.create(username: params[:username], email: params[:email], password: params[:password])
      @user.save
      session[:user_id] = @user.id
+     # binding.pry
      redirect '/bbts'
     end
    end

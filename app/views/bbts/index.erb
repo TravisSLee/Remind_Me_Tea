@@ -1,12 +1,12 @@
-<h1>Hello, <%=@user.username%></h1>
+<h1>Hello, <%=current_user.username%></h1>
 
-<%# <% @btts.each do |btt| %>
+<% @bbts.each do |bbt| %>
   <h3><a href="/users/<%=bbt.user%>"></a> </h3>
-  <p><%= btt.name %></p>
-  <p><%= btt.brand %></p>
+  <p><%= bbt.name %></p>
+  <p><%= bbt.brand %></p>
   <a href="/bbts/<%=bbt.id%>">View this bubbletea</a>
   <br></br>
 <% end %>
   <br></br>
-  <a href="/bbts/new">New Tweet</a>
-  <a href="/logout">Log Out</a> %>
+  <a href="/bbts/new">New bubbletea</a>
+  <a href="/logout">Log Out</a>
