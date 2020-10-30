@@ -4,7 +4,7 @@
 
 <ul>
   <% @user.friends.each do |friend|%>
-  <li><%= friend.bbt %> <a href="/friend/<%=friend.id%>/edit">EDIT</a></li>
+  <li><%= friend.bbt.all %> <a href="/friend/<%=friend.id%>/edit">EDIT</a></li>
   <% end %>
 </ul>
 
