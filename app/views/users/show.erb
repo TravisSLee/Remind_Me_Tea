@@ -1,10 +1,13 @@
 <h1><%=@user.username%></h1>
 
-<a href="/friend/new">New Friend</a>
-
 <ul>
-  <% @user.friends.each do |friend|%>
-  <li><%= friend.bbt.all %> <a href="/friend/<%=friend.id%>/edit">EDIT</a></li>
+  <% @user.bbts.each do |btt|%>
+  <li><%= bbt.name %></li>
+  <li><%= bbt.brand %></li>
+  <li><%= bbt.sugar_amount %></li>
+  <li><%= bbt.type %></li>
+  <li><%= bbt.size %> </li>
+  <li><a href="/btts/<%=btt.id%>/edit">EDIT</a></li>
   <% end %>
 </ul>
 

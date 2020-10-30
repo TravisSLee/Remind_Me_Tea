@@ -15,15 +15,10 @@ ActiveRecord::Schema.define(version: 20201029183845) do
 
   create_table "bbts", force: :cascade do |t|
     t.string  "name"
+    t.string  "brand"
+    t.string  "sugar_amount"
     t.string  "size"
     t.string  "type"
-    t.integer "user_id"
-    t.integer "friend_id"
-  end
-
-  create_table "friends", force: :cascade do |t|
-    t.string  "name"
-    t.integer "age"
     t.integer "user_id"
   end
 
