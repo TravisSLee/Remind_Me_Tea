@@ -4,21 +4,22 @@ class BbtsController < ApplicationController
       redirect '/login'
     else
       @btts = Bbt.all
-      erb :'friends/index'
+      erb :'btts/index'
     end
   end
 
   post '/bbts' do
    if logged_in?
      if params[:bbt] == ""
-       redirect to 'bbt/new'
+       # redirect to 'bbt/new'
+       "Hello"
      else
        @bbt = current_user.bbt.build(bbt: params[:bbt])
        @bbt.save
        if @bbt.save
-         redirect to "/bbt/#{@bbt.id}"
+         redirect to "/bbts/#{@bbt.id}"
        else
-         redirect '/bbt/new'
+         redirect '/bbts/new'
        end
      end
    else
@@ -30,14 +31,14 @@ class BbtsController < ApplicationController
     if !logged_in?
       redirect '/login'
     else
-      erb :"tweets/new"
+      erb :"btts/new"
     end
   end
 
   get '/bbts/:id' do
     if logged_in?
       @bbt = Bbt.find(params[:id])
-      erb :'btt/show'
+      erb :'btts/show'
     else
       redirect to '/login'
     end
