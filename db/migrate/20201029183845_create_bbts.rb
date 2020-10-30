@@ -1,6 +1,6 @@
 class CreateBbts < ActiveRecord::Migration
   def change
-    create_table :friends do |t|
+    create_table :bbts do |t|
       t.string :name
       t.string :size
       t.string :type

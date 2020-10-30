@@ -1,0 +1,11 @@
+<h1><%=@user.username%></h1>
+
+<a href="/friend/new">New Friend</a>
+
+<ul>
+  <% @user.friends.each do |friend|%>
+  <li><%= friend.bbt %> <a href="/friend/<%=friend.id%>/edit">EDIT</a></li>
+  <% end %>
+</ul>
+
+<a href="/logout">Log Out</a>
