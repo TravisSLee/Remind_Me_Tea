@@ -5,7 +5,7 @@ class CreateBbts < ActiveRecord::Migration
       t.string :brand
       t.string :sugar_amount
       t.string :size
-      t.string :type
+      t.string :temp
       t.integer :user_id
     end
   end

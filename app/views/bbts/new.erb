@@ -1,16 +1,16 @@
-<% if Helpers.logged_in?(session) %>
+<% if logged_in? %>
 <%= @error %>
   <form action='/bbts' method="POST">
     Bubbletea Name:
     <input type="text" name="name"><br>
     Brand:
     <input type="text" name="brand"><br>
+    Sugar Amount:
+    <input type="text" name="sugar_amount"><br>
     Size:
     <input type="text" name="size"><br>
-    Type:
-    <input type="text" name="type"><br>
-    Sugar Amount:
-    <input type="text" name="name"><br>
+    Hot or Cold:
+    <input type="text" name="temp"><br>
     <input type="submit" name="Create">
   </form>
 

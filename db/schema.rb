@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20201029183845) do
     t.string  "brand"
     t.string  "sugar_amount"
     t.string  "size"
-    t.string  "type"
+    t.string  "temp"
     t.integer "user_id"
   end
 

@@ -14,7 +14,7 @@ class BbtsController < ApplicationController
      if params[:bbt] == ""
        redirect to 'bbts/new'
      else
-       @bbt = current_user.bbts.build(bbt: params[:bbt])
+       @bbt = current_user.bbts.build(name: params[:name], brand: params[:brand], sugar_amount: params[:sugar_amount], size: params[:size], temp: params[:temp])
        @bbt.save
        if @bbt.save
          redirect to "/bbts/#{@bbt.id}"
@@ -25,20 +25,20 @@ class BbtsController < ApplicationController
    else
      redirect "/login"
    end
- end
+  end
 
  get '/bbts/new' do
     if !logged_in?
       redirect '/login'
     else
-      erb :"btts/new"
+      erb :"bbts/new"
     end
   end
 
   get '/bbts/:id' do
     if logged_in?
       @bbt = Bbt.find(params[:id])
-      erb :'btts/show'
+      erb :'bbts/show'
     else
       redirect to '/login'
     end
