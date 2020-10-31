@@ -69,4 +69,18 @@ class BbtsController < ApplicationController
       redirect '/login'
     end
   end
+
+  delete '/bbts/:id/delete' do
+    if logged_in?
+      @bbt = bbt.find_by_id(params[:id])
+      if @bbt.user_id == current_user.id
+        @btt.delete
+        redirect to '/bbt'
+      else
+        erb :'bbt/error'
+      end
+    else
+      redirect to '/login'
+    end
+  end
 end
