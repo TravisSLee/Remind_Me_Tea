@@ -1,0 +1,7 @@
+<form method="POST" action="/bbt/<%=@bbt.id%>">
+  <input type="hidden" name="_method" id="hidden" value="patch">
+
+  <input type="text" name="content" value="<%=@bbt.name%>">
+
+  <input type="submit" value="Edit">
+</form> 
