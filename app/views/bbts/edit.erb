@@ -1,6 +1,8 @@
 <h1> You are now edting <%= @bbt.name %> now.</h1>
 <form method="POST" action="/bbts/<%=@bbt.id%>">
   <input type="hidden" name="_method" id="hidden" value="patch">
+  Bubbles:
+  <input type="text" name="bubble" value="<%=@bbt.bubble%>"><br>
   Brand:
   <input type="text" name="brand" value="<%=@bbt.brand%>"><br>
   Sugar Amount:
