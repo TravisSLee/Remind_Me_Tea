@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20201029183845) do
 
   create_table "bbts", force: :cascade do |t|
     t.string  "name"
+    t.string  "bubble"
     t.string  "brand"
     t.string  "sugar_amount"
     t.string  "size"
