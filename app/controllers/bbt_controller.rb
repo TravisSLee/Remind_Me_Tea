@@ -14,7 +14,7 @@ class BbtsController < ApplicationController
      if params[:bbt] == ""
        redirect to 'bbts/new'
      else
-       @bbt = current_user.bbts.build(name: params[:name], brand: params[:brand], sugar_amount: params[:sugar_amount], size: params[:size], temp: params[:temp])
+       @bbt = current_user.bbts.build(name: params[:name], bubble: params[:bubble] brand: params[:brand], sugar_amount: params[:sugar_amount], size: params[:size], temp: params[:temp])
        @bbt.save
        if @bbt.save
          redirect to "/bbts/#{@bbt.id}"

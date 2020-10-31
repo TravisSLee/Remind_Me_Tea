@@ -1,9 +1,10 @@
 <h2><%= @bbt.user.username %></h2>
-<p><%= @bbt.name%>:<br>
-  <%= @bbt.brand%><br>
-  <%= @bbt.sugar_amount%><br>
-  <%= @bbt.size%><br>
-  <%= @bbt.temp%></p>
+<p>Name: <%= @bbt.name%>:<br>
+  Bubbles: <%= @bbt.bubble%><br>
+  Brand: <%= @bbt.brand%><br>
+  Sugar Amount:<%= @bbt.sugar_amount%><br>
+  Size: <%= @bbt.size%><br>
+  Hot or Cold: <%= @bbt.temp%></p>
 
 <% if @bbt.user == current_user %>
   <form method="post" action="/bbts/<%=@bbt.id%>/delete">
