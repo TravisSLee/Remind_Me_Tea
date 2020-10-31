@@ -44,12 +44,29 @@ class BbtsController < ApplicationController
     end
   end
 
-  get '/btts/:id/edit' do
+  get '/bbts/:id/edit' do
     if logged_in?
       @bbt = Bbt.find(params[:id])
       erb :'bbts/edit'
     else
       redirect "/login"
+    end
+  end
+
+  patch '/bbts/:id' do
+    if logged_in?
+      @bbt = Bbt.find_by(params[:id])
+      if !params[:brand] == ""
+        redirect to "/bbts/#{@bbt.id}/edit"
+      else
+        @bbt.brand = params[:brand]
+        @bbt.sugar_amount = params[:sugar_amount]
+        @bbt.size = params[:size]
+        @bbt.temp = params[:temp]
+        @bbt.save
+      end
+    else
+      redirect '/login'
     end
   end
 end

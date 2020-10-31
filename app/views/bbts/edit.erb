@@ -1,7 +1,13 @@
-<form method="POST" action="/bbt/<%=@bbt.id%>">
+<h1> You are now edting <%= @bbt.name %> now.</h1>
+<form method="POST" action="/bbts/<%=@bbt.id%>">
   <input type="hidden" name="_method" id="hidden" value="patch">
-
-  <input type="text" name="content" value="<%=@bbt.name%>">
-
+  Brand:
+  <input type="text" name="brand" value="<%=@bbt.brand%>"><br>
+  Sugar Amount:
+  <input type="text" name="sugar_amount" value="<%=@bbt.sugar_amount%>"><br>
+  Size:
+  <input type="text" name="size" value="<%=@bbt.size%>"><br>
+  Hot or Cold:
+  <input type="text" name="temp" value="<%=@bbt.temp%>"><br>
   <input type="submit" value="Edit">
-</form> 
+</form>
