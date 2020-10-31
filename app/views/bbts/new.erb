@@ -1,0 +1,19 @@
+<% if Helpers.logged_in?(session) %>
+<%= @error %>
+  <form action='/bbts' method="POST">
+    Bubbletea Name:
+    <input type="text" name="name"><br>
+    Brand:
+    <input type="text" name="brand"><br>
+    Size:
+    <input type="text" name="size"><br>
+    Type:
+    <input type="text" name="type"><br>
+    Sugar Amount:
+    <input type="text" name="name"><br>
+    <input type="submit" name="Create">
+  </form>
+
+<% else %>
+    <h1> You Must Be Logged To Make Your List. </h1>
+<% end %>
