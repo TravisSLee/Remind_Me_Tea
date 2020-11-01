@@ -1,6 +1,6 @@
 <h1> You are now edting <%= @bbt.name %> now.</h1>
 <form method="POST" action="/bbts/<%=@bbt.id%>">
-  <input type="hidden" name="_method" id="hidden" value="patch">
+  <input type="hidden" name="_method" id="hidden" value="PATCH">
   Bubbles:
   <select name="bubble">
       <option value="Yes">Yes</option>
