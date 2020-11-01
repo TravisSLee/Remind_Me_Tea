@@ -55,11 +55,11 @@ class BbtsController < ApplicationController
 
   patch '/bbts/:id' do
     if logged_in?
-      bbt = Bbt.find_by_id(params[:id])
-      if params[:brand] == ""
+      @bbt = Bbt.find_by_id(params[:id])
+      if @bbt.update(bubble: params[:bubble], brand: params[:brand], sugar_amount: params[:sugar_amount], size: params[:size], temp: params[:temp])
+        redirect to "/bbts/#{@bbt.id}"
+      esle
         redirect to "/bbts/#{@bbt.id}/edit"
-      else
-        bbt.update(bubble: params[:bubble], brand: params[:brand], sugar_amount: params[:sugar_amount], size: params[:size], temp: params[:temp])
       end
     else
       redirect '/login'
