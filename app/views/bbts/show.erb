@@ -5,9 +5,9 @@
   Sugar Amount: <%= @bbt.sugar_amount%><br>
   Size: <%= @bbt.size%><br>
   Hot or Cold: <%= @bbt.temp%></p>
-<a href="/bbts">Back To Homepage</a><br>
+<a href="/bbts"><Button>Back To Homepage</Button></a><br>
 <% if @bbt.user == current_user %>
-  <a href="/bbts/<%=@bbt.id%>/edit">Edit Bubbletea</a><br>
+  <a href="/bbts/<%=@bbt.id%>/edit"><Button>Edit Bubbletea</Button></a><br>
   <form method="POST" action="/bbts/<%= @bbt.id %>">
     <input type="hidden" name="_method" id="hidden" value="DELETE">
     <input type="submit" value="Delete Bubbletea">

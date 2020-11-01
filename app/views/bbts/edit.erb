@@ -1,4 +1,4 @@
-<h1> You are now edting <%= @bbt.name %> now.</h1>
+<h1> You are now edting your <%= @bbt.name %> from <%= @bbt.brand %> now.</h1>
 <form method="POST" action="/bbts/<%=@bbt.id%>">
   <input type="hidden" name="_method" id="hidden" value="PATCH">
   Bubbles:
@@ -29,4 +29,4 @@
   </select><br>
   <input type="submit" value="Edit">
 </form>
-<a href="/logout">Log Out</a>
+<a href="/bbts/<%= @bbt.id%>"><Button>Go Back</Button></a><br>
