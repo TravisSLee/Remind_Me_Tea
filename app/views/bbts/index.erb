@@ -2,8 +2,7 @@
 
 <% @bbts.each do |bbt| %>
   <h3><a href="/users/<%=bbt.user%>"></a> </h3>
-  <p><%= bbt.name %></p>
-  <a href="/bbts/<%=bbt.id%>">View This Bubbletea</a>
+  <p><a href="/bbts/<%=bbt.id%>"><%= bbt.name %></a></p>
   <br></br>
 <% end %>
   <br></br>

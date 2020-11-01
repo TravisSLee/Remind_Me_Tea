@@ -5,11 +5,10 @@
   Sugar Amount:<%= @bbt.sugar_amount%><br>
   Size: <%= @bbt.size%><br>
   Hot or Cold: <%= @bbt.temp%></p>
-
+<a href="/bbts">Back</a><br>
 <% if @bbt.user == current_user %>
+  <a href="/bbts/<%=@bbt.id%>/edit">Edit Bubbletea</a>
   <form method="post" action="/bbts/<%=@bbt.id%>/delete">
     <input type="submit" value="Delete Bubbletea">
   </form>
-  <a href="/bbts/<%=@bbt.id%>/edit">Edit Bubbletea</a>
 <% end %>
-  <a href='/logout>Log Out</a>'
