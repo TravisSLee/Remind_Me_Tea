@@ -6,6 +6,4 @@ class UsersController < ApplicationController
       redirect to '/bbts'
     end
   end
-
-  
 end

@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   get '/login' do
     if !logged_in?
-      erb :'users/login'
+      erb :'sessions/login'
     else
       redirect '/bbts'
     end
