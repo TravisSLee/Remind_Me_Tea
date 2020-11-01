@@ -1,3 +1,3 @@
 2.times do
-  user = User.create(name: FAKER::Funnyname.name, email: FAKER::Internet.email, password: "123")
+  user = User.create(username: Faker::Name.name, email: Faker::Internet.email, password: "123")
 end
