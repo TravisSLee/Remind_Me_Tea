@@ -33,8 +33,12 @@ class BbtsController < ApplicationController
 
   get '/bbts/:id' do
     if logged_in?
-      @bbt = Bbt.find(params[:id])
-      erb :'bbts/show'
+      @bbt = current_user.bbts.find(params[:id])
+      if @bbt
+        erb :'bbts/show'
+      else
+        redirect '/bbts'
+      end
     else
       redirect to '/login'
     end
@@ -42,8 +46,12 @@ class BbtsController < ApplicationController
 
   get '/bbts/:id/edit' do
     if logged_in?
-      @bbt = Bbt.find_by_id(params[:id])
-      erb :'bbts/edit'
+      @bbt = current_user.bbts.find_by_id(params[:id])
+      if @bbt
+        erb :'bbts/edit'
+      else
+        redirect '/bbts'
+      end
     else
       redirect "/login"
     end
@@ -51,10 +59,10 @@ class BbtsController < ApplicationController
 
   patch '/bbts/:id' do
     if logged_in?
-      @bbt = Bbt.find_by_id(params[:id])
+      @bbt = current_user.bbts.find_by_id(params[:id])
       if @bbt.update(bubble: params[:bubble], brand: params[:brand], sugar_amount: params[:sugar_amount], size: params[:size], temp: params[:temp])
         redirect to "/bbts/#{@bbt.id}"
-      esle
+      else
         redirect to "/bbts/#{@bbt.id}/edit"
       end
     else
@@ -64,9 +72,13 @@ class BbtsController < ApplicationController
 
   delete '/bbts/:id' do
     if logged_in?
-      @bbt = Bbt.find(params[:id])
-      @bbt.destroy
-      redirect to '/bbts'
+      @bbt = current_user.btts.find(params[:id])
+      if @bbt
+        @bbt.destroy
+        redirect to '/bbts'
+      else
+        redirect '/bbts'
+      end
     else
       redirect to '/login'
     end
