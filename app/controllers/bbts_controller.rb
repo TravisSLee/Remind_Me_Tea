@@ -76,7 +76,7 @@ class BbtsController < ApplicationController
 
   delete '/bbts/:id' do
     if logged_in?
-      @bbt = current_user.btts.find(params[:id])
+      @bbt = current_user.bbts.find(params[:id])
       if @bbt
         @bbt.destroy
         redirect to '/bbts'
