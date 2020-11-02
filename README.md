@@ -29,7 +29,7 @@ group :test do
 end
 ```
 
-Finally in order to run the app, type rake db:migrate,then "shotgun" into your terminal to start up listing your favorite bubbleteas.
+Finally in order to run the app, type "shotgun" into your terminal to start up listing your favorite bubbleteas.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
