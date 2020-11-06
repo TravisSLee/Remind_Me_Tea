@@ -17,24 +17,12 @@ class SessionsController < ApplicationController
     end
   end
 
-  post '/signup' do
-    if params[:username] == "" || params[:email] == "" || params[:password] == ""
-     redirect '/signup'
+  get '/logout' do
+    if logged_in?
+      session.clear
+      redirect '/login'
     else
-     @user = User.create(username: params[:username], email: params[:email], password: params[:password])
-     @user.save
-     session[:user_id] = @user.id
-     # binding.pry
-     redirect '/bbts'
+      redirect '/'
     end
-   end
-
-   get '/logout' do
-     if logged_in?
-       session.clear
-       redirect '/login'
-     else
-       redirect '/'
-     end
-   end
+  end
 end
